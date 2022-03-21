@@ -1,4 +1,102 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+*,
+::after,
+::before {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+:root { 
+    --fuente: 'Open Sans', sans-serif;
+    --rojo-back: #DC0A2D;
+    --azul-btn: #27AAFC;
+    --blanco: #DEDEDD;
+    --negro: #232323;
+}
+
+body {
+    font-family: var(--fuente);
+    /* background-color: #000;
+    color: #fff; */
+}
+
+/* * Aqui esya el outline */
+
+main, section, a ,p , h1, h2, h3, img , div {
+    outline: 1px solid #fff;
+}
+
+.container {
+    max-width: 1000px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.img {
+    width: 300px;
+}
+img {
+    width: 100%;
+}
+
+.container .titulo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.container .titulo h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 20px;
+    /* margin: ; */
+}
+
+.container .titulo input {
+    width: 40%;
+    margin: 0px auto;
+    padding: 10px 10px;
+    margin-bottom: 1rem;
+}
+
+.container .titulo .btn {
+    display: inline-block;
+    margin: 0 auto;
+    width: 40%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    background-color: var( --azul-btn );
+    color: var( --blanco );
+    cursor: pointer;
+}
+
+.container .titulo .btn:hover {
+    background-color: #174d6e;
+}
+
+.pokedex {
+    background-color: var( --rojo-back );
+    color: var( --blanco );
+    border-radius: 20px;
+}
+
+.circulo {
+    border-radius: 100%;
+    border: 3px solid var(--negro);
+
+}
+
+.pokedex .circulo-padre {
+    width: 200px;
+    height: 200px;
+}
+.pokedex .circulo-hijo {
+    width: 150px;
+    height: 150px;
 }

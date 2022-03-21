@@ -3,6 +3,9 @@ const fetchPokemon = () => {
 
     const pokeNameInput = document.getElementById("pokeName");
     let pokeName = pokeNameInput.value;
+    let nombreEli = document.getElementById('nombreChido');
+
+    //nombreEli.innerHTML  = "Eliza"
 
     pokeName = pokeName.toLowerCase();
 
@@ -20,9 +23,17 @@ const fetchPokemon = () => {
 
         if (data) {
 
-            console.log(data);
+            // console.log(data);
 
             let pokeImg = data.sprites.front_default;
+            let pokemonname = data.forms[0].name;
+            let pokemonabil = data.abilities;
+
+            nombreEli.innerHTML = pokemonname;
+             console.log(pokemonname);
+
+             extraerAbil(pokemonabil)
+
 
             pokeImage(pokeImg);
 
@@ -35,4 +46,17 @@ const fetchPokemon = () => {
 const pokeImage = (url) => {
     const pokePhoto = document.getElementById("pokeImg");
     pokePhoto.src = url;
+}
+
+const extraerAbil = ( cajaDeAbilidades ) => {
+
+    console.log("Funcion que extrae abilidades");
+
+    // console.log(cajaDeAbilidades[0].ability.name);
+
+    for (let index = 0; index < cajaDeAbilidades.length; index++) {
+        console.log(cajaDeAbilidades[index].ability.name);
+        
+    }
+
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +9,31 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Pokedex - Launch X</title>
 </head>
+
 <body>
     <div class="container">
-        <h1>Pokedex (Kalos) Launch - X</h1>
-        <input type="text" placeholder="pikachu" id="pokeName" name="pokeName">
-        <button onclick="fetchPokemon()">Cambiar Imágen</button>
+        <section class="titulo">
+            <h1>Pokedex (Kalos) Launch - X</h1>
+            <input type="text" placeholder="id/pikachu" id="pokeName" name="pokeName">
+            <button class="btn" onclick="fetchPokemon()">Buscar</button>
+        </section>
 
-        <hr>
+        <section class="pokedex">
+            <div class="circulo-padre circulo">
+                <div class="circulo-hijo circulo"></div>
+            </div>
+            <section class="info">
+                <p id="nombreChido">Nombre</>
+                <div class="img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png" alt="Pokemon" id="pokeImg" >
+                </div>
+            </section>
+        </section>
 
 
-
-        <div class="img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png" alt="Pokemon" id="pokeImg" width="150px">
-        </div>
     </div>
+
+
 
     <div class="demo">
         <img src="assets/pokedex-kalos.jpg" alt="">
@@ -29,4 +41,5 @@
 
     <script src="js/app.js"></script>
 </body>
+
 </html>
