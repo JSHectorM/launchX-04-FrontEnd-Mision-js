@@ -14,7 +14,7 @@
     <div class="container">
         <section class="titulo">
             <h1>Pokedex (Kalos) Launch - X</h1>
-            <input type="text" placeholder="id/pikachu" id="pokeName" name="pokeName">
+            <input type="text" placeholder="id/pikachu" id="pokeName" name="pokeName" value="monferno">
             <button class="btn" onclick="fetchPokemon()">Buscar</button>
         </section>
 
@@ -27,12 +27,28 @@
                     <div class="circulo-hijo circulo-der"></div>
                 </div>    
             </section>
+
+
+            <!-- * informacion -->
+
             <section class="info">
-                <p id="nombreChido">Nombre</>
+                <div class="datos">
+                    <p id="idPoke" >No:</p>
+                    <p class="nombrePokemon" id="nombrePoke">Nombre...</p>
+                    <p>Tipo:</p>
+                    <p class="tipo" id="tipo">Tipo...</p>
+                    <p>Estadisticas:</p>
+                    <p class="stats" id="stats">Estadisticas...</p>
+                    <p>Movimientos:</p>
+                    <p class="mov" id="mov">Movimientos...</p>
+                </div>
                 <div class="img">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png" alt="Pokemon" id="pokeImg" >
                 </div>
             </section>
+
+            <!-- ! informacion -->
+
             <section class="footer">
                 <div class="circulo-padre circulo-izq">
                     <div class="circulo-hijo circulo-izq"></div>
@@ -49,7 +65,7 @@
 
 
     <div class="demo">
-        <img src="assets/pokedex-kalos.jpg" alt="">
+        <!-- <img src="assets/pokedex-kalos.jpg" alt=""> -->
     </div>
 
     <script src="js/app.js"></script>
