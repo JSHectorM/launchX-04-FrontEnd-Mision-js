@@ -1,5 +1,5 @@
 (function(){
-    console.log('Datos default');
+    // console.log('Datos default');
 
     const pokeNameInput = document.getElementById("pokeName");
     let pokeName = pokeNameInput.value;
@@ -16,7 +16,7 @@
 
     fetch(url).then((res) => {
         if (res.status != "200") {
-            console.log(res);
+            // console.log(res);
             pokeImage("assets/pokemon-sad.gif")
         }
         else {
@@ -25,10 +25,6 @@
     }).then((data) => {
 
         if (data) {
-
-            console.log(data);
-
-            let aux;
 
             let pokeImg = data.sprites.other.home.front_default;
             let pokemonname = data.forms[0].name;
@@ -72,7 +68,7 @@ const fetchPokemon = () => {
 
     fetch(url).then((res) => {
         if (res.status != "200") {
-            console.log(res);
+            // console.log(res);
             pokeImage("assets/pokemon-sad.gif")
         }
         else {
@@ -82,9 +78,7 @@ const fetchPokemon = () => {
 
         if (data) {
 
-            console.log(data);
-
-            let aux;
+            // console.log(data);
 
             let pokeImg = data.sprites.other.home.front_default;
             let pokemonname = data.forms[0].name;
@@ -118,7 +112,6 @@ const extraerAbilidades = (cajaDeAbilidades) => {
     let aux;
 
     for (let index = 0; index < cajaDeAbilidades.length; index++) {
-        console.log(cajaDeAbilidades[index].ability.name);
 
         if (index === 0) {
             aux = cajaDeAbilidades[index].ability.name+ " ";
@@ -152,7 +145,6 @@ const extraerstats = (cajaDestats) => {
     let aux;
 
     for (let index = 0; index < cajaDestats.length; index++) {
-        // console.log(cajaDestats[index].stat.name);
         if (index === 0) {
             aux = cajaDestats[index].stat.name + ": " + cajaDestats[index].base_stat + " | " ; 
         }

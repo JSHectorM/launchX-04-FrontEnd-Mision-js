@@ -11,16 +11,20 @@
 
 :root { 
     --fuente: 'Open Sans', sans-serif;
-    --rojo-back: #DC0A2D;
-    --azul-btn: #27AAFC;
-    --blanco: #DEDEDD;
+    /* --rojo-back: #DC0A2D; */
+    --rojo-back: #E63946;
+    /* --azul-btn: #27AAFC; */
+    --azul-btn: #457B9D;
+    /* --blanco: #DEDEDD; */
+    --blanco: #F1FAEE;
     --negro: #232323;
+    /* --negro: #1D3557; */
 }
 
 body {
     font-family: var(--fuente);
-    /* background-color: #000;
-    color: #fff; */
+    background-color: #1D3557;
+    color: #F1FAEE;
 }
 
 /* * Aqui esya el outline */
