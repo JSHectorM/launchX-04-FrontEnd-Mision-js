@@ -1,5 +1,4 @@
-(function(){
-    // console.log('Datos default');
+(function () {
 
     const pokeNameInput = document.getElementById("pokeName");
     let pokeName = pokeNameInput.value;
@@ -9,7 +8,7 @@
     let statsPoke = document.getElementById('stats');
     let movPoke = document.getElementById('mov');
 
-    
+
     pokeName = pokeName.toLowerCase();
 
     const url = `https://pokeapi.co/api/v2/pokemon/bulbasaur`;
@@ -29,14 +28,14 @@
             let pokeImg = data.sprites.other.home.front_default;
             let pokemonname = data.forms[0].name;
             let pokemonabil = data.abilities;
-            let identificadorPokemon =  data.id;
+            let identificadorPokemon = data.id;
 
 
             pokeImage(pokeImg);
-            
-            idPokemon.innerHTML = "No: "+ identificadorPokemon;
+
+            idPokemon.innerHTML = "No: " + identificadorPokemon;
             nombrePokemon.innerHTML = pokemonname;
-            
+
             tipoPoke.innerHTML = extraerTipo(data.types);
 
             movPoke.innerHTML = extraerAbilidades(pokemonabil);
@@ -46,7 +45,7 @@
             extraerstats(data.stats)
         }
     });
-    
+
 
 })();
 
@@ -79,25 +78,30 @@ const fetchPokemon = () => {
         if (data) {
 
             // console.log(data);
+            if (pokeName != '') {
 
-            let pokeImg = data.sprites.other.home.front_default;
-            let pokemonname = data.forms[0].name;
-            let pokemonabil = data.abilities;
-            let identificadorPokemon =  data.id;
+                let pokeImg = data.sprites.other.home.front_default;
+                let pokemonname = data.forms[0].name;
+                let pokemonabil = data.abilities;
+                let identificadorPokemon = data.id;
 
+                pokeImage(pokeImg);
 
-            pokeImage(pokeImg);
-            
-            idPokemon.innerHTML = "No: "+ identificadorPokemon;
-            nombrePokemon.innerHTML = pokemonname;
-            
-            tipoPoke.innerHTML = extraerTipo(data.types);
+                idPokemon.innerHTML = "No: " + identificadorPokemon;
+                nombrePokemon.innerHTML = pokemonname;
 
-            movPoke.innerHTML = extraerAbilidades(pokemonabil);
+                tipoPoke.innerHTML = extraerTipo(data.types);
 
-            statsPoke.innerHTML = extraerstats(data.stats)
+                movPoke.innerHTML = extraerAbilidades(pokemonabil);
 
-            extraerstats(data.stats)
+                statsPoke.innerHTML = extraerstats(data.stats)
+
+                extraerstats(data.stats)
+            }
+            else {
+                alert('Inserta un nombre o un id !!')
+            }
+
         }
     });
 }
@@ -114,10 +118,10 @@ const extraerAbilidades = (cajaDeAbilidades) => {
     for (let index = 0; index < cajaDeAbilidades.length; index++) {
 
         if (index === 0) {
-            aux = cajaDeAbilidades[index].ability.name+ " ";
-        } 
+            aux = cajaDeAbilidades[index].ability.name + " ";
+        }
         else {
-            aux += cajaDeAbilidades[index].ability.name+ " ";
+            aux += cajaDeAbilidades[index].ability.name + " ";
         }
 
     }
@@ -129,10 +133,10 @@ const extraerTipo = (cajaDeTipos) => {
     for (let index = 0; index < cajaDeTipos.length; index++) {
 
         if (index === 0) {
-            aux = cajaDeTipos[index].type.name + " "; 
+            aux = cajaDeTipos[index].type.name + " \n";
         }
         else {
-            aux += cajaDeTipos[index].type.name + " "; 
+            aux += cajaDeTipos[index].type.name + " \n";
         }
 
     }
@@ -146,10 +150,10 @@ const extraerstats = (cajaDestats) => {
 
     for (let index = 0; index < cajaDestats.length; index++) {
         if (index === 0) {
-            aux = cajaDestats[index].stat.name + ": " + cajaDestats[index].base_stat + " | " ; 
+            aux = cajaDestats[index].stat.name + ": " + cajaDestats[index].base_stat + " | \n";
         }
         else {
-            aux += cajaDestats[index].stat.name + ": " + cajaDestats[index].base_stat + " | "; 
+            aux += cajaDestats[index].stat.name + ": " + cajaDestats[index].base_stat + " | \n";
         }
 
     }

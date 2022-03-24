@@ -39,9 +39,6 @@ main, section, a ,p , h1, h2, h3, img , div {
     margin: 0 auto;
 }
 
-.img {
-    width: 300px;
-}
 img {
     width: 100%;
 }
@@ -144,4 +141,20 @@ img {
 /* * contenido de la pojkedex */
 .info {
     background-color: var(--azul-btn);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info .datos {
+    width: 50%;
+}
+
+.info .datos p{
+    display: inline-block;
+    width: 49%;
+    /* text-align: right; */
+}
+
+.info .img {
+    width: 50%;
 }
